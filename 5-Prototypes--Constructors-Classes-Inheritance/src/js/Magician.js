@@ -1,8 +1,10 @@
-import Character from './app';
+import Character from './Character';
 
 class Magician extends Character {
-  show() {
-    console.log(this);
+  constructor(name) {
+      super(name, 'Magician');
+      this.attack = 10;
+      this.defence = 40;
   }
 }
 
