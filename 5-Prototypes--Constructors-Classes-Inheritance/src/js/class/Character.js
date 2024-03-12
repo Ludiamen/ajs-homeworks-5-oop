@@ -12,8 +12,8 @@ class Character {
       this.type = type;
       this.health = 100;
       this.level = 1;
-      this.attack = 0;
-      this.defence = 0;
+      this.attack = undefined;
+      this.defence = undefined;
   }
 
   levelUp() {
@@ -36,13 +36,3 @@ class Character {
       this.health = Math.max(this.health - damageTaken, 0); // Ensure health doesn't go negative
   }
 }
-
-// Example usage:
-const myCharacter = new Character('Alice', 'Bowman');
-console.log(myCharacter.health); // 100
-myCharacter.damage(30);
-console.log(myCharacter.health); // 85
-myCharacter.levelUp();
-console.log(myCharacter.level); // 2
-console.log(myCharacter.attack); // 30 (20% increase from initial 25)
-console.log(myCharacter.defence); // 30 (20% increase from initial 25)

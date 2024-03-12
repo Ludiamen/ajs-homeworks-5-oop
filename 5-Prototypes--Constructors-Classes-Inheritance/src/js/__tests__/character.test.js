@@ -1,7 +1,18 @@
-import sum from '../basic';
+import Character from '../class/Character';
 
-test('should sum', () => {
-  const result = sum([1, 2, 3]);
+test('Ошибка в name', () => {
+    expect(() => new Character('A', 'Bowman')).toThrow();
+});
 
-  expect(result).toBe(6);
+test('Ошибка в type', () => {
+    expect(() => new Character('Alex', 'Bow')).toThrow();
+});
+
+test('Правильно создается объект', () => {
+    const warior = new Character('Alex', 'Bowman');
+    const correct = {
+        attack: undefined, defence: undefined, health: 100, name: 'Alex', type: 'Bowman', level: 1,
+    };
+
+expect(warior).toEqual(correct);   
 });
